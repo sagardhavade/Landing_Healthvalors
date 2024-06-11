@@ -1,9 +1,4 @@
-/**
-* Template Name: Medilab - v4.9.1
-* Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 (function() {
   "use strict";
 
@@ -223,13 +218,13 @@ const ratings = {
 };
 
 // total number of stars
-const starTotal = 5;
+// const starTotal = 5;
 
-for(const rating in ratings) {  
-  const starPercentage = (ratings[rating] / starTotal) * 100;
-  const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
-  document.querySelector(`.${rating} .stars-inner`).style.width = starPercentageRounded; 
-}
+// for(const rating in ratings) {  
+//   const starPercentage = (ratings[rating] / starTotal) * 100;
+//   const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
+//   document.querySelector(`.${rating} .stars-inner`).style.width = starPercentageRounded; 
+// }
 
 
 

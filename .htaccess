@@ -1,0 +1,78 @@
+
+
+# BEGIN WordPress
+# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+
+
+# <IfModule mod_rewrite.c>
+# RewriteEngine On
+# RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+# RewriteBase /
+# RewriteRule ^index\.php$ - [L]
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule . /index.php [L]
+# </IfModule>
+
+# <IfModule mod_rewrite.c>
+# Options +FollowSymLinks
+# RewriteEngine on 
+# RewriteCond %{SERVER_PORT} 80
+# RewriteCond %{HTTP_HOST} ^(www\.)?triohims\.com
+# RewriteRule ^(.*)$ https://www.triohims.com/$1 [R,L]
+# RewriteRule ^(\d+)/.*/$ marketplacel/index\.php?id=$1&%{QUERY_STRING} [L]
+# RewriteRule ^.*-u(\d+)-.*/$ marketplacel/index\.php?id=$1&%{QUERY_STRING} [L]
+# RewriteRule ^c-(.*)/$ marketplacel/index\.php?cat=$1&%{QUERY_STRING} [L]
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_FILENAME}\.php -f
+# RewriteRule ^(.*)$ $1.php
+# </IfModule>
+
+# ErrorDocument 404 https://triohims.com/404.html
+
+# END WordPress
+# RewriteCond %{HTTPS} off
+# RewriteCond %{HTTP:X-Forwarded-SSL} !on
+# RewriteCond %{HTTP_HOST} ^triohims\.com$ [OR]
+# RewriteCond %{HTTP_HOST} ^www\.triohims\.com$
+# RewriteRule ^/?$ "https\:\/\/www\.triohims\.com\/" [R=301,L]
+
+# RewriteEngine on
+# RewriteCond %{HTTP_HOST} ^triohims\.com$ [NC]
+# RewriteRule ^(.*)$ http://www.triohims.com/$1 [R=301,L]
+
+# RewriteEngine on
+# RewriteCond %{HTTP_HOST} !^www\.triohims\.com$ [NC]
+# RewriteRule ^(.*)$ http://www.triohims.com/$1 [R=301,L]
+
+
+
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^index\.html$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.html [L]
+</IfModule>
+
+ErrorDocument 404 https://triohims.com/404.html
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^triohims\.com$ [NC]
+RewriteRule ^(.*)$ http://www.triohims.com/$1 [R=301,L]
+
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} !^www\.triohims\.com$ [NC]
+RewriteRule ^(.*)$ http://www.triohims.com/$1 [R=301,L]
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php74” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php74 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
